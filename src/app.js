@@ -79,7 +79,7 @@ app.get("/weather", (req,res) => {
 })
 
 app.get('/products', (req,res) => {
-    console.log(req.query.search)
+    //console.log(req.query.search)
     const {search,rating} = req.query
     if(search == undefined){
         return res.send({
