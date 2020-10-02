@@ -17,6 +17,9 @@ console.log(viewPath)
 //creating an express app
 const app = express()
 
+//this will get environment variable used for heroku if not found then it will be set to 3000
+const port = process.env.PORT || 3000 
+
 //Setup handlerbar engine and views location
 app.set('view engine','hbs')
 app.set('views', viewPath)
@@ -112,6 +115,6 @@ app.get("*", (req,res) => {
 })
 
 //Run express at a particular port
-app.listen(3000, () => {
-    console.log("Server Started on Port 3000!!")
+app.listen(port, () => {
+    console.log("Server Started on Port "+port+"!!")
 })
