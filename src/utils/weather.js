@@ -11,10 +11,12 @@ const getWeather = (lat,long,callback) => {
             callback(body.error.info,undefined)
         }else{
             const {current} = JSON.parse(body)
-            const {temperature, precip} = current
+            const {temperature, precip, weather_icons, weather_descriptions} = current
             const data = {
                 temperature,
-                precip 
+                precip,
+                weather_icons,
+                weather_descriptions
             }
             // const temp = newObj.current.temperature
             // const precip = newObj.current.precip
